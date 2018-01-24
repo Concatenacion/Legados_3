@@ -1,5 +1,6 @@
 Wrapper web de una aplicación legada en MSDOS
 =============
+[![Build Status](https://travis-ci.org/Concatenacion/Legados_3.svg?branch=master)](https://travis-ci.org/Concatenacion/Legados_3)
 
 Esta aplicación desarrollada en Java, sera utilizada como wrapper sobre una aplicación legada en MSDOS, permitiendo obtener los datos almacenados en la base de dicha aplicación legada.
 
