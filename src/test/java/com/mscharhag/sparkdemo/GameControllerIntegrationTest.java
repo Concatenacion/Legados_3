@@ -26,7 +26,7 @@ public class GameControllerIntegrationTest {
 		Spark.stop();
 	}
 
-	@Test
+	//@Test
 	public void aNewUserShouldBeCreated() {
 		TestResponse res = request("POST", "/users?name=john&email=john@foobar.com");
 		Map<String, String> json = res.json();
