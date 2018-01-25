@@ -13,6 +13,7 @@ public class gameController {
 		get("/numbers", (req, res) -> { return 9999; }, json());
 
 		get("/game/:id", (req, res) -> {
+			System.out.println(req.params(":id"));
 			String id_S = req.params(":id");
 			int id = Integer.parseInt(id_S);
 			if (gameService.existGame(id)) {
@@ -23,6 +24,7 @@ public class gameController {
 		}, json());
 
 		get("/cinta/:id", (req, res) -> {
+			System.out.println(req.params(":id"));
 			String id = req.params(":id");
 			if (gameService.existCinta(id)) {
 

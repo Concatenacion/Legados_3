@@ -9,9 +9,6 @@ app.config(function ($routeProvider) {
     $routeProvider.when('/', {
         templateUrl: 'views/list.html',
         controller: 'ListCtrl'
-    }).when('/create', {
-        templateUrl: 'views/create.html',
-        controller: 'CreateCtrl'
     }).otherwise({
         redirectTo: '/'
     })
@@ -19,24 +16,26 @@ app.config(function ($routeProvider) {
 
 app.controller('ListCtrl', function ($scope, $http) {
     $http.get('/numbers').success(function (data) {
-        console.log(data)
+        $scope.numbers=data;
     }).error(function (data, status) {
         console.log('Error ' + data)
-    })
-});
+    });
 
-app.controller('CreateCtrl', function ($scope, $http, $location) {
-    $scope.todo = {
-        done: false
-    };
-
-    $scope.createTodo = function () {
-        console.log($scope.todo);
-        $http.get('/game/2', $scope.todo).success(function (data) {
-            console.log(data)
-            $location.path('/');
-        }).error(function (data, status) {
+    $scope.game = function () {
+        $http.get('/game/'+$scope.title).success(function (data) {
+            console.log(data);
+            $scope.todo = data;
+        }).error(function (data) {
             console.log('Error ' + data)
-        })
+        });
+    }
+
+    $scope.cinta = function () {
+        $http.get('/cinta/'+$scope.title).success(function (data) {
+            console.log(data);
+            $scope.todo = data;
+        }).error(function (data) {
+            console.log('Error ' + data)
+        });
     }
 });

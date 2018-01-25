@@ -18,7 +18,7 @@ public class Main {
         setPort(PORT);
         staticFileLocation("/public");
 
-        googleApi.sendGoogle(new File("C:\\Users\\pfort\\Desktop\\Legados_3\\src\\main\\resources\\public\\cartel.jpg"));
+        //googleApi.sendGoogle(new File("C:\\Users\\pfort\\Desktop\\Legados_3\\src\\main\\resources\\public\\cartel.jpg"));
 
 		new gameController(new gameService());
 	}

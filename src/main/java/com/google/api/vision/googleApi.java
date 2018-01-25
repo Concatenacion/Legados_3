@@ -13,7 +13,7 @@ public class googleApi {
     private static final String TARGET_URL =
             "https://vision.googleapis.com/v1/images:annotate?";
     private static final String API_KEY =
-            "key=AIzaSyBDPdnnI-3Xbn9lAy6opQKZvCPyq_nF-o8";
+            "key=";
 
 
     public static void sendGoogle (File file){
@@ -51,7 +51,7 @@ public class googleApi {
             while (httpResponseScanner.hasNext()) {
                 String line = httpResponseScanner.nextLine();
                 resp += line;
-                System.out.println(line);  //  alternatively, print the line of response
+                //System.out.println(line);  //  alternatively, print the line of response
             }
             httpResponseScanner.close();
 
